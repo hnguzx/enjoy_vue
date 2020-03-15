@@ -1,5 +1,7 @@
 <template>
   <div>
+    <router-view/>
+    <Main/>
     <el-form>
       <el-form-item label="登录名" prop="username">
         <el-input v-model="user.username"/>
@@ -16,9 +18,13 @@
 
 <script>
   import {login} from "../network/index/index";
+  import Main from "components/content/main/Main";
 
   export default {
     name: 'index',
+    components: {
+      Main
+    },
     data() {
       return {
         user: {
@@ -31,7 +37,8 @@
       login() {
         login(this.user)
             .then(data => {
-              console.log(data)
+              console.log(data);
+              this.$router.replace('/set')
             })
             .catch(err => {
               console.log(err)
