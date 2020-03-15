@@ -15,11 +15,11 @@
 </template>
 
 <script>
-  import NavBar from "components/common/navbar/NavBar"
-  import Swipe from "./childComps/Swipe"
+  import NavBar from "components/common/navbar/NavBar";
+  import Swipe from "./childComps/Swipe";
   import Recommend from "./childComps/Recommend";
 
-  import {getJokeInfo, getImage, getRecommend} from "network/home/home"
+  import {getJokeInfo, getImage, getRecommend} from "network/home/home";
 
   export default {
     name: "Home",

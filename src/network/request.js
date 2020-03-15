@@ -5,9 +5,10 @@ export function ajaxRequest(config) {
 
   // 公共参数
   const axiosExample = axios.create({
-    baseURL: '',
+    // baseURL: 'http://localhost',
+    baseURL: 'http://hnguzx1.utools.club',
     timeout: 5000,
-    headers: {'content-type': 'application/x-www-form-urlencoded'},
+    // headers: {'content-type': 'application/x-www-form-urlencoded'},
     responseType: 'json'
   });
   // request拦截

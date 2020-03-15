@@ -18,15 +18,15 @@ module.exports = {
     hotOnly: true, //是否开启热更新
 
     // 使用代理处理游览器的跨域问题
-    proxy: {
-      '/api': {
-        target: 'http://v.juhe.cn', //API服务器的地址
-        ws: true,  //代理webSockets
-        changeOrigin: true, // 虚拟的站点需要更管origin
-        pathRewrite: {   //重写路径 比如'/api/aaa'重写为'/aaa'
-          '^/api': ''
-        }
-      },
-    }
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://v.juhe.cn', //API服务器的地址
+    //     ws: true,  //代理webSockets
+    //     changeOrigin: true, // 虚拟的站点需要更管origin
+    //     pathRewrite: {   //重写路径 比如'/api/aaa'重写为'/aaa'
+    //       '^/api': ''
+    //     }
+    //   },
+    // }
   }
 };
