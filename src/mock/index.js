@@ -59,6 +59,15 @@ Mock.mock('/recommend.json', 'get', {
       name:'@cword(2,5)'
     }
   ]
+});
+
+Mock.mock('/login.json', 'post', {
+  state: 200,
+  message: '登录成功',
+  user:{
+    username:'guzx123',
+    password:'123'
+  }
 })
 
 

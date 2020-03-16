@@ -36,12 +36,6 @@
     },
     methods: {},
     created() {
-      /*getJokeInfo(Date.parse(new Date()).toString().substr(0, 10))
-        .then((data) => {
-        this.jokeData = data.result.data;
-          console.log(data)
-      }).catch(err => {
-      });*/
       getImage().then(data => {
         this.imgData = data.data;
       });
