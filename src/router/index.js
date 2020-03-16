@@ -1,7 +1,18 @@
+/*
+ * @Author: guzx 
+ * @Date: 2020-03-16 15:22:10 
+ * @Description:  总路由
+ * @Last Modified by: guzx
+ * @Last Modified time: 2020-03-16 16:29:26
+ */
+
 import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router);
+
+// 导入其它路由文件
+import homeRouter from './homeRouter';
 
 const Home = () => import('views/home/Home');
 const Profile = () => import('views/profile/Profile');
@@ -41,7 +52,7 @@ const routes = [
       }
     ]
   },
-
+  ...homeRouter
 ];
 
 const router = new Router({
