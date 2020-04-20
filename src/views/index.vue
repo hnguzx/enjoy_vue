@@ -2,7 +2,7 @@
   <div>
     <router-view/>
     <Main/>
-    <el-form>
+    <!--<el-form>
       <el-form-item label="登录名" prop="username">
         <el-input v-model="user.username"/>
       </el-form-item>
@@ -12,12 +12,12 @@
       <el-form-item>
         <el-button type="primary" @click="login">登录</el-button>
       </el-form-item>
-    </el-form>
+    </el-form>-->
   </div>
 </template>
 
 <script>
-  import {login} from "../network/index/index";
+  // import {login} from "../network/index/index";
   import Main from "components/content/main/Main";
 
   export default {
@@ -27,14 +27,14 @@
     },
     data() {
       return {
-        user: {
+        /*user: {
           username: 'guzx',
           password: '123'
-        }
+        }*/
       }
     },
     methods: {
-      login() {
+      /*login() {
         login(this.user)
             .then(data => {
               console.log(data);
@@ -43,7 +43,7 @@
             .catch(err => {
               console.log(err)
             })
-      }
+      }*/
     }
   }
 </script>

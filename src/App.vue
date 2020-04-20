@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <index/>
   </div>
 </template>
@@ -12,7 +11,6 @@
   export default {
     name: 'App',
     components: {
-      // Main
       Index
     }
   }

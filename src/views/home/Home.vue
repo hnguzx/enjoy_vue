@@ -19,7 +19,7 @@
   import Swipe from "./childComps/Swipe";
   import Recommend from "./childComps/Recommend";
 
-  import {getJokeInfo, getImage, getRecommend} from "network/home/home";
+  import { getImage, getRecommend} from "network/home/home";
 
   export default {
     name: "Home",
@@ -36,12 +36,6 @@
     },
     methods: {},
     created() {
-      /*getJokeInfo(Date.parse(new Date()).toString().substr(0, 10))
-        .then((data) => {
-        this.jokeData = data.result.data;
-          console.log(data)
-      }).catch(err => {
-      });*/
       getImage().then(data => {
         this.imgData = data.data;
       });
