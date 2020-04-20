@@ -1,8 +1,12 @@
 <template>
   <div>
+<<<<<<< HEAD
     <router-view/>
     <Main/>
     <!--<el-form>
+=======
+    <el-form>
+>>>>>>> ed40edb0de15e7e80dd62476407aaf1f108ba1c6
       <el-form-item label="登录名" prop="username">
         <el-input v-model="user.username"/>
       </el-form-item>
@@ -37,8 +41,7 @@
       /*login() {
         login(this.user)
             .then(data => {
-              console.log(data);
-              this.$router.replace('/set')
+              this.$router.replace('/main/home');
             })
             .catch(err => {
               console.log(err)

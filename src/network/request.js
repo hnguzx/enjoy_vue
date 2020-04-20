@@ -5,7 +5,8 @@ export function ajaxRequest(config) {
 
   // 公共参数
   const axiosExample = axios.create({
-    // baseURL: 'http://localhost:8080',
+    baseURL: '', // 调用mock数据，实际应用时注释掉，打开下面的baseURL
+    // baseURL: 'http://hnguzx1.utools.club',
     timeout: 5000,
     headers: {'content-type': 'application/x-www-form-urlencoded'},
     responseType: 'json'

@@ -1,18 +1,24 @@
 <template>
   <div id="app">
+<<<<<<< HEAD
     <index/>
+=======
+    <router-view></router-view>
+>>>>>>> ed40edb0de15e7e80dd62476407aaf1f108ba1c6
   </div>
 </template>
 
 <script>
 
-  import Index from "views/index"
-
   export default {
+<<<<<<< HEAD
     name: 'App',
     components: {
       Index
     }
+=======
+    name: 'App'
+>>>>>>> ed40edb0de15e7e80dd62476407aaf1f108ba1c6
   }
 </script>
 

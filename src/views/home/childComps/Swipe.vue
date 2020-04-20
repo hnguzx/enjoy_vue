@@ -26,5 +26,8 @@
 </script>
 
 <style scoped>
+a img{
+  width: 100%;
+}
 
 </style>
