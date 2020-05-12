@@ -20,11 +20,14 @@
 
 <style scoped>
   .nav-bar{
-    /*position: fixed;
+    position: fixed;
     left: 0;
     right: 0;
-    top: 0px;*/
+    top: 0px;
+    background-color: #ffffff;
     display: flex;
+
+    z-index: 10;
 
     text-align: center;
     /*状态栏20*/

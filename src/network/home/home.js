@@ -26,3 +26,7 @@ export function getImage() {
 export function getRecommend() {
   return ajaxRequest('/recommend.json')
 }
+
+export function getGoodsList() {
+  return ajaxRequest('/goodsList.json')
+}

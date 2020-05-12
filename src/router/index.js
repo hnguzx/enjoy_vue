@@ -1,6 +1,6 @@
 /*
- * @Author: guzx 
- * @Date: 2020-03-16 15:22:10 
+ * @Author: guzx
+ * @Date: 2020-03-16 15:22:10
  * @Description:  总路由
  * @Last Modified by: guzx
  * @Last Modified time: 2020-03-16 16:29:26
@@ -18,22 +18,26 @@ const Home = () => import('views/home/Home');
 const Profile = () => import('views/profile/Profile');
 const File = () => import('views/file/File');
 const Set = () => import('views/set/Set');
-const Main = () => import('components/content/main/Main')
-const Index = () => import('views/Index')
+const Main = () => import('components/content/main/Main');
+// const Index = () => import('views/index');
 
 const routes = [
   {
     path: '/',
-    redirect: 'index'
+    redirect: 'main'
   },
-  {
-    path: '/index',
-    component: Index
-  },
+  // {
+  //   path: '/index',
+  //   component: Index
+  // },
   {
     path: '/main',
     component: Main,
     children: [
+      {
+        path: '/',
+        redirect: 'home'
+      },
       {
         path: 'home',
         component: Home

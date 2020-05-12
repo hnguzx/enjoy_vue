@@ -61,6 +61,20 @@ Mock.mock('/recommend.json', 'get', {
   ]
 });
 
+Mock.mock('/goodsList.json', 'get', {
+  state: 200,
+  message: '获取商品列表成功',
+  'data|20': [
+    {
+      id: '@increment(1)',
+      imgUrl: '@dataImage("68x68","hello guzx")',
+      price:'@float(0,100)',
+      goodsName:'@string(5,20)',
+      collectNum:'@integer(0,500)'
+    }
+  ]
+});
+
 Mock.mock('/login.json', 'post', {
   state: 200,
   message: '登录成功',

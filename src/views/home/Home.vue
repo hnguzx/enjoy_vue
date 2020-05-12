@@ -11,22 +11,30 @@
     </nav-bar>
     <swipe :imgData="imgData"/>
     <recommend :recommendData="recommendData"/>
+    <tab-control class="tab-control" :titles="['流行','新款','精选']"/>
+    <ul>
+      <li v-for="item in 60">{{item}}</li>
+    </ul>
   </div>
 </template>
 
 <script>
-  import NavBar from "components/common/navbar/NavBar";
-  import Swipe from "./childComps/Swipe";
-  import Recommend from "./childComps/Recommend";
+  import NavBar from "components/common/navbar/NavBar"
+  import TabControl from "components/content/tabControl/TabControl"
 
-  import { getImage, getRecommend} from "network/home/home";
+  import Swipe from "./childComps/Swipe"
+  import Recommend from "./childComps/Recommend"
+
+  import {getImage, getRecommend,getGoodsList} from "network/home/home"
 
   export default {
     name: "Home",
     components: {
       NavBar,
+      TabControl,
       Swipe,
       Recommend
+
     },
     data() {
       return {
@@ -41,25 +49,18 @@
       });
       getRecommend().then(data => {
         this.recommendData = data.data
-      })
+      });
+      getGoodsList().then(data =>{
+        console.log("请求回来的数据是：");
+        console.log(data)
+      });
     }
   }
 </script>
 
 <style scoped>
-  .el-carousel__item h3 {
-    color: #475669;
-    font-size: 14px;
-    opacity: 0.75;
-    line-height: 150px;
-    margin: 0;
-  }
-
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
-
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
+  .tab-control {
+    position: sticky;
+    top: 44px;
   }
 </style>
