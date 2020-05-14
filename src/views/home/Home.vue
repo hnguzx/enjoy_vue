@@ -13,7 +13,15 @@
     <recommend :recommendData="recommendData"/>
     <tab-control class="tab-control" :titles="['流行','新款','精选']"/>
     <ul>
-      <li v-for="item in 60">{{item}}</li>
+      <li v-for="(item,index) in goodsList">
+        <div class="goods-item">
+          <p>{{item.goodsName}}</p>
+          <span>{{item.price}}</span>
+          <span>{{item.collectNum}}</span>
+          <img :src="item.imgUrl"/>
+        </div>
+
+      </li>
     </ul>
   </div>
 </template>
@@ -39,7 +47,8 @@
     data() {
       return {
         imgData: [],
-        recommendData: []
+        recommendData: [],
+        goodsList:[]
       }
     },
     methods: {},
@@ -50,9 +59,10 @@
       getRecommend().then(data => {
         this.recommendData = data.data
       });
-      getGoodsList().then(data =>{
-        console.log("请求回来的数据是：");
-        console.log(data)
+      getGoodsList({"username":"guzhixiong"}).then(data =>{
+        this.goodsList = data.data;
+      }).catch(err=>{
+        console.log(err)
       });
     }
   }

@@ -42,7 +42,7 @@ Mock.mock('/swipe.json', 'get', {
   'data|4': [
     {
       id: '@increment(1)',
-      imgUrl: '@dataImage("320x150","hello guzx")',
+      imgUrl: '@dataImage("320x150","轮播图")',
       url: '@url'
     }
   ]
@@ -61,14 +61,20 @@ Mock.mock('/recommend.json', 'get', {
   ]
 });
 
+const goodsList = function(opt){
+  console.log(opt)
+};
+
+// Mock.mock('/goodsList.json','get',goodsList);
+
 Mock.mock('/goodsList.json', 'get', {
   state: 200,
   message: '获取商品列表成功',
   'data|20': [
     {
       id: '@increment(1)',
-      imgUrl: '@dataImage("68x68","hello guzx")',
-      price:'@float(0,100)',
+      imgUrl: '@dataImage("68x68","goods")',
+      price:'@integer(0,100)',
       goodsName:'@string(5,20)',
       collectNum:'@integer(0,500)'
     }

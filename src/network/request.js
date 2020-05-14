@@ -13,12 +13,12 @@ export function ajaxRequest(config) {
   });
   // request拦截
   axiosExample.interceptors.request.use(config => {
+    // config.data = config
     return config
   }, error => {
   });
   // response拦截
   axiosExample.interceptors.response.use(res => {
-    console.log(res.data);
     return res.data
   }, error => {
   });
