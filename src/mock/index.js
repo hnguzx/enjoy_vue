@@ -23,18 +23,6 @@ const userInfo = function (opt) {
 // Mock.mock( url, post/get , 返回的数据)；
 Mock.mock('/user.json', 'get', userInfo);
 
-// 模板
-/*Mock.mock('/url','get',{
-  state:200,
-  message:'获取资源成功',
-  'data|4':[
-    {
-      id:'@increment(1)',
-      imgUrl:'@dataImage("320x150","hello guzx")',
-      url:'@url'
-    }
-  ]
-})*/
 
 Mock.mock('/swipe.json', 'get', {
   state: 200,
@@ -56,37 +44,68 @@ Mock.mock('/recommend.json', 'get', {
       id: '@increment(1)',
       imgUrl: '@dataImage("68x68","hello guzx")',
       url: '@url',
-      name:'@cword(2,5)'
+      name: '@cword(2,5)'
     }
   ]
 });
 
-const goodsList = function(opt){
-  console.log(opt)
-};
-
-// Mock.mock('/goodsList.json','get',goodsList);
-
-Mock.mock('/goodsList.json', 'get', {
-  state: 200,
-  message: '获取商品列表成功',
-  'data|20': [
+const goodInfo1 = Mock.mock({
+  "list|30": [
     {
-      id: '@increment(1)',
-      imgUrl: '@dataImage("68x68","goods")',
-      price:'@integer(0,100)',
-      goodsName:'@string(5,20)',
-      collectNum:'@integer(0,500)'
+      goodId: '@increment(1)',
+      sort: 'fashion',
+      title: '@cword(5,10)',
+      imageURL:'@dataImage("86x86","流行商品图")',
+      price:'@integer(60, 100)',
+      collect:'@integer(1, 100)'
     }
   ]
 });
+
+const goodInfo2 = Mock.mock({
+  "list|30": [
+    {
+      goodId: '@increment(1)',
+      sort: 'newStyle',
+      title: '@cword(5,10)',
+      imageURL:'@dataImage("86x86","新款商品图")',
+      price:'@integer(60, 100)',
+      collect:'@integer(1, 100)'
+    }
+  ]
+});
+
+const goodInfo3 = Mock.mock({
+  "list|30": [
+    {
+      goodId: '@increment(1)',
+      sort: 'sift',
+      title: '@cword(5,10)',
+      imageURL:'@dataImage("86x86","精选商品图")',
+      price:'@integer(60, 100)',
+      collect:'@integer(1, 100)'
+    }
+  ]
+});
+
+Mock.mock('/goodsList.json', function (options) {
+  let data = JSON.parse(options.body);
+  if (data.type == 'fashion') {
+    return goodInfo1;
+  } else if (data.type == 'newStyle') {
+    return goodInfo2;
+  } else if (data.type == 'sift') {
+    return goodInfo3;
+  }
+});
+
 
 Mock.mock('/login.json', 'post', {
   state: 200,
   message: '登录成功',
-  user:{
-    username:'guzx123',
-    password:'123'
+  user: {
+    username: 'guzx123',
+    password: '123'
   }
 })
 

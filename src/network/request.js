@@ -19,6 +19,7 @@ export function ajaxRequest(config) {
   });
   // response拦截
   axiosExample.interceptors.response.use(res => {
+    // return res
     return res.data
   }, error => {
   });

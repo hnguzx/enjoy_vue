@@ -30,7 +30,7 @@ export function getRecommend() {
 export function getGoodsList(options) {
   return ajaxRequest({
     url:'/goodsList.json',
-  {}
+    method:'post',
+    data:options
   });
-  // return ajaxRequest('/goodsList.json')
 }
